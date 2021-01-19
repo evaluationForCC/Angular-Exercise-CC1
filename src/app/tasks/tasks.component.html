@@ -1,0 +1,56 @@
+<!--Task1-->
+<div class="task">
+    <div class="taskTitle">Task1</div><br>
+    <mat-label color="primary" *ngIf="userInput">{{ userInput  }} </mat-label><br>
+    <mat-form-field style="text-align:left; width : 100%;" class="example-full-width">
+
+        <input matInput [(ngModel)]="userInput" title="user input" /> <br>
+    </mat-form-field>
+</div><br><br>
+
+
+<!--Task3-->
+<div class="task">
+    <div class="taskTitle">Task3</div><br>
+    <mat-toolbar>
+        <span style="color: red; font-size : 80%;">{{ userInput |  inputValidator }} </span>
+    </mat-toolbar>
+</div><br><br>
+
+
+<!--Task2-->
+<div *ngIf="selectedpageContent" class="task">
+
+    <div class="taskTitle">
+        The page content:
+    </div><br>
+    {{selectedpageContent.content}}
+
+</div><br><br>
+
+<div class="task">
+    <div class="taskTitle">Task2</div><br>
+
+    <button color="accent" mat-raised-button style=" margin: 2%; min-width: 15%;"
+        *ngFor="let pagesContent of pagesContents" (click)="onSelectPageContent(pagesContent)">
+        {{ pagesContent.name }}
+    </button><br>
+
+    <ng-container>
+        Dynamic tab contents ...
+    </ng-container>
+
+    <mat-tab-group>
+        <mat-tab *ngFor="let pagesContent of pagesContents">
+            <ng-template mat-tab-label>{{pagesContent.name}}</ng-template>
+            {{pagesContent.content}}
+        </mat-tab>
+    </mat-tab-group>
+</div><br><br>
+
+<!--Task4-->
+<div class="task">
+    <div class="taskTitle">Task4</div><br>
+    <div class="taskTitle"><img _ngcontent-wsr-c66="" src="assets/images/specs.png" width="100%" height="auto"
+            title="Test-Specs" alt="Test" class="ng-star-inserted"></div><br>
+</div><br><br>
